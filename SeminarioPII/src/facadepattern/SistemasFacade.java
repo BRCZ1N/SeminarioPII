@@ -4,35 +4,35 @@ package facadepattern;
 
 public class SistemasFacade {
 	
-	private SistemaDeAudio audio;
-	private SistemaDeInput input;
-	private SistemaDeVideo video;
+	private SistemaAudio sistemaAudio;
+	private SistemaInput sistemaInput;
+	private SistemaVideo sistemaVideo;
 
 	public void inicializarSubsistemas() {
-		video = new SistemaDeVideo();
-		video.configurarCores();
-		video.configurarResolucao();
+		sistemaVideo = new SistemaVideo();
+		sistemaVideo.configurarCores();
+		sistemaVideo.configurarResolucao();
 
-		input = new SistemaDeInput();
-		input.configurarJoystick();
-		input.configurarTeclado();
+		sistemaInput = new SistemaInput();
+		sistemaInput.configurarJoystick();
+		sistemaInput.configurarTeclado();
 
-		audio = new SistemaDeAudio();
-		audio.configurarCanais();
-		audio.configurarFrequencia();
-		audio.configurarVolume();
+		sistemaAudio = new SistemaAudio();
+		sistemaAudio.configurarCanais();
+		sistemaAudio.configurarFrequencia();
+		sistemaAudio.configurarVolume();
 	}
 
 	public void reproduzirAudio(String arquivo) {
-		audio.reproduzirAudio(arquivo);
+		sistemaAudio.reproduzirAudio(arquivo);
 	}
 
 	public void renderizarImagem(String imagem) {
-		video.renderizarImagem(imagem);
+		sistemaVideo.renderizarImagem(imagem);
 	}
 
 	public void lerInput() {
-		input.lerInput();
+		sistemaInput.lerInput();
 	}
 
 }

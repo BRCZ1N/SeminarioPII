@@ -2,11 +2,12 @@ package facadepattern;
 
 
 
-public class Cliente {
+public class Main {
 	
 	public static void main(String[] args) {
-		System.out.println("##### Configurando subsistemas #####");
+		
 		SistemasFacade fachada = new SistemasFacade();
+		System.out.println("##### Configurando subsistemas #####");
 		fachada.inicializarSubsistemas();
 
 		System.out.println("##### Utilizando subsistemas #####");

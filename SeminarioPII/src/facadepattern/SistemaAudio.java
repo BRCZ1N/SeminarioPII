@@ -2,7 +2,7 @@ package facadepattern;
 
 
 
-public class SistemaDeAudio {
+public class SistemaAudio {
 
 	public void configurarFrequencia() {
 		System.out.println("Frequencia configurada");

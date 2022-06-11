@@ -2,7 +2,7 @@ package facadepattern;
 
 
 
-public class SistemaDeVideo {
+public class SistemaVideo {
 	public void configurarResolucao() {
 		System.out.println("Resolução configurada");
 	}

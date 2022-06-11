@@ -1,7 +1,8 @@
 package facadepattern;
 
 
-public class SistemaDeInput {
+public class SistemaInput {
+	
 	public void configurarTeclado() {
 		System.out.println("Teclado configurado");
 	}
