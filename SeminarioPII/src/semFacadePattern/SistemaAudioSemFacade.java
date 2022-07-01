@@ -1,4 +1,4 @@
-package semFacadePattern;
+package semfacadepattern;
 
 public class SistemaAudioSemFacade {
 		public void configurarFrequencia() {

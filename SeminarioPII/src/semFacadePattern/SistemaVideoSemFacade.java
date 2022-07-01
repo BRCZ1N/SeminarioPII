@@ -1,4 +1,4 @@
-package semFacadePattern;
+package semfacadepattern;
 
 
 public class SistemaVideoSemFacade {
