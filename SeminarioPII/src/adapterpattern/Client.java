@@ -1,24 +1,19 @@
 package adapterpattern;
 
-public class Client {
+import javax.mail.internet.InternetAddress;
+import org.apache.commons.validator.routines.EmailValidator;
+
+public class Client{
+	
 	public static void main(String[] args) {
-
-		PessoaAdapter pessoa = new PessoaAdapter(new Pessoa());
-		EmpresaAdapter empresa = new EmpresaAdapter(new Empresa());
-
-		if (pessoa.getRegistro() != null) {
-
-			System.out.println("Pessoa verificada");
-
-		}
 		
-		if (empresa.getRegistro() != null) {
-
-			System.out.println("Empresa verificada");
-
-		}
+		InternetAddressAdapter emailValidation = new InternetAddressAdapter(new InternetAddress());
+		EmailValidatorAdapter emailValidation2 = new EmailValidatorAdapter(EmailValidator.getInstance());
 		
+		System.out.println(emailValidation.isEmail("emailteste1234@gmail.com"));
+		System.out.println(emailValidation2.isEmail("emailteste1234@gmail.com"));
 		
 	}
+
 
 }

@@ -2,6 +2,6 @@ package adapterpattern;
 
 public interface Target {
 	
-	public String getRegistro();
+	public boolean isEmail(String email);
 
 }

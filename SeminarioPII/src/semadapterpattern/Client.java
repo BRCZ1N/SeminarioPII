@@ -1,23 +1,34 @@
 package semadapterpattern;
 
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import org.apache.commons.validator.routines.EmailValidator;
+
 public class Client {
+
 	public static void main(String[] args) {
 
-		Pessoa pessoa = new Pessoa();
-		Empresa empresa = new Empresa();
+		boolean resposta1;
+		boolean resposta2;
+		
+		try {
 
-		if (pessoa.getCpf() != null) {
+			InternetAddress emailAddr = new InternetAddress("testandoemail1234@gmail.com");
+			emailAddr.validate();
+			resposta1 = true;
 
-			System.out.println("Pessoa verificada");
+		} catch (AddressException e1) {
+
+			resposta1 = false;
+			e1.getMessage();
 
 		}
 		
-		if (empresa.getCnpj() != null) {
+		EmailValidator emailVal = EmailValidator.getInstance();
+		resposta2 = emailVal.isValid("testandoemail1234@gmail.com");
 
-			System.out.println("Pessoa verificada");
-
-		}
-		
+		System.out.println(resposta1);
+		System.out.print(resposta2);
 		
 	}
 
