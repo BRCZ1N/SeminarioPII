@@ -1,5 +1,7 @@
 package adapterpattern;
 
+import java.util.Scanner;
+
 import javax.mail.internet.InternetAddress;
 import org.apache.commons.validator.routines.EmailValidator;
 
@@ -13,6 +15,8 @@ public class Client{
 		System.out.println(emailValidation.isEmail("emailteste1234@gmail.com"));
 		System.out.println(emailValidation2.isEmail("emailteste1234@gmail.com"));
 			
+		
+		
 	}
 
 
