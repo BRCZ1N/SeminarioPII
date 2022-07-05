@@ -1,13 +1,13 @@
 package abstractfactorysemuso;
 
-public class Gato implements Animal {
-	@Override
-	public String getAnimal() {
-		return "Gato";
-	}
+public class Gato implements Animal{
+    @Override
+    public String getAnimal() {
+        return "Gato";
+    }
 
-	@Override
-	public String fazSom() {
-		return "Miau!";
-	}
+    @Override
+    public String fazSom() {
+        return "Miau!";
+    }
 }

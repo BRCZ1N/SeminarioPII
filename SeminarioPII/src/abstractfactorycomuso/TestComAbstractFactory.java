@@ -1,20 +1,23 @@
 package abstractfactorycomuso;
 
 import abstractfactorysemuso.Animal;
+import abstractfactorysemuso.Cor;
 
 public class TestComAbstractFactory {
-	
-    public static void main(String[] args) {
-        AbstractFactory<Animal> abstractFactory;
 
-        
-        abstractFactory = FactoryProvider.getFactory("Animal");
-        Animal animal = abstractFactory.criar("Cachorro");
+	public static void main(String[] args) {
+		AbstractFactory<Animal> abstractFactory;
 
+		abstractFactory = FactoryProvider.getFactory("Animal");
+		Animal animal = abstractFactory.criar("Cachorro");
 
-        String resultado = String.format("Um %s e  faz %s", animal.getAnimal(), animal.fazSom());
+		abstractFactory = FactoryProvider.getFactory("Cor");
+		Cor cor = (Cor) abstractFactory.criar("Branco");
 
-        System.out.println(resultado);
-    }
+		String resultado = String.format("Um %s de cor %s faz %s", animal.getAnimal(), cor.getCor(), animal.fazSom());
+
+		System.out.println(resultado);
+
+	}
 
 }

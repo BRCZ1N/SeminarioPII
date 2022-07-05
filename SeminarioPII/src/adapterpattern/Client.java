@@ -12,7 +12,7 @@ public class Client{
 		
 		System.out.println(emailValidation.isEmail("emailteste1234@gmail.com"));
 		System.out.println(emailValidation2.isEmail("emailteste1234@gmail.com"));
-		
+			
 	}
 
 
