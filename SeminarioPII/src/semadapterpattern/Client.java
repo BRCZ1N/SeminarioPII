@@ -1,5 +1,7 @@
 package semadapterpattern;
 
+import java.util.Scanner;
+
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import org.apache.commons.validator.routines.EmailValidator;
@@ -8,27 +10,43 @@ public class Client {
 
 	public static void main(String[] args) {
 
-		boolean resposta1;
-		boolean resposta2;
+		Boolean resposta = null;
 		
-		try {
+		Scanner teclado = new Scanner(System.in);
+		System.out.print("Digite o email:");
+		String email = teclado.next();
+		System.out.println("Digite qual opção deseja utilizar para validar o email:");
+		System.out.println("1 para InternetAddress");
+		System.out.println("2 para EmailValidator");
+		String escolha = teclado.next(); 
+		
+		if(escolha.equals("1")) {
+			
+			try {
 
-			InternetAddress emailAddr = new InternetAddress("testandoemail1234@gmail.com");
-			emailAddr.validate();
-			resposta1 = true;
+				InternetAddress emailAddr = new InternetAddress(email);
+				emailAddr.validate();
+				resposta = true;
 
-		} catch (AddressException e1) {
+			} catch (AddressException e1) {
 
-			resposta1 = false;
-			e1.getMessage();
+				resposta = false;
 
+			}
+			
+		}else if(escolha.equals("2")){
+			
+			EmailValidator emailVal = EmailValidator.getInstance();
+			resposta = emailVal.isValid(email);	
+			
+		}else {
+			
+			System.out.println("Opção inválida");
+			
 		}
 		
-		EmailValidator emailVal = EmailValidator.getInstance();
-		resposta2 = emailVal.isValid("testandoemail1234@gmail.com");
-
-		System.out.println(resposta1);
-		System.out.print(resposta2);
+		System.out.println(resposta);
+		
 		
 	}
 
